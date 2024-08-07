@@ -15,6 +15,11 @@ public class Remove implements Command {
 
     @Override
     public void execute() throws Exception {
-        studentService.removeStudentById(Integer.parseInt(args[0]));
+        boolean removed = studentService.removeStudentById(Integer.parseInt(args[0]));
+        if(removed){
+            System.out.println("Student has been removed. Don't forget to push changes.");
+        }else{
+            System.out.println("There is no student with id " + args[0]);
+        }
     }
 }

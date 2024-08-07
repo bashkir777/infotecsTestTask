@@ -19,7 +19,7 @@ services:
 
   ftp-client:
     build:
-      context: ./test_task_p1
+      context: ./ftp-client
     container_name: ftp-client
     stdin_open: true
     tty: true

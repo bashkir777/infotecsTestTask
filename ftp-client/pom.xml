@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.bashkir777</groupId>
-    <artifactId>test_task_p1</artifactId>
+    <artifactId>ftp-client</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <build>
-        <finalName>test_task_p1</finalName>
+        <finalName>ftp-client</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

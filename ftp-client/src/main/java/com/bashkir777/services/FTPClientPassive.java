@@ -8,9 +8,7 @@ import java.nio.charset.StandardCharsets;
 
 public class FTPClientPassive extends FTPClient {
 
-    public FTPClientPassive(String user, String pass) {
-        super(user, pass);
-    }
+    public FTPClientPassive() {}
 
     public Socket openConnection() throws IOException {
         connect();
@@ -60,7 +58,8 @@ public class FTPClientPassive extends FTPClient {
             dataSocket = openConnection();
             sendCommand("RETR " + remoteFileName);
             String answer = readResponse();
-            if(answer.equals("550 File not found")){
+
+            if(answer.equals("550 Failed to open file.")){
                 throw new IOException("No such file");
             }
 

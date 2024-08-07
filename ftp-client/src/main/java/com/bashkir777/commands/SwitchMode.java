@@ -16,16 +16,12 @@ public class SwitchMode implements Command {
     public void execute() throws Exception {
         if(commandService.getFtpClient().getClass().equals(FTPClientActive.class)){
             commandService.setFtpClient(
-                    new FTPClientPassive(
-                            System.getenv("FTP_USER"), System.getenv("FTP_PASS")
-                    )
+                    new FTPClientPassive()
             );
             System.out.println("Mode has been switched successfully. Current mode: Passive");
         }else{
             commandService.setFtpClient(
-                    new FTPClientActive(
-                            System.getenv("FTP_USER"), System.getenv("FTP_PASS")
-                    )
+                    new FTPClientActive()
             );
             System.out.println("Mode has been switched successfully. Current mode: Active");
         }

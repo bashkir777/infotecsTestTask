@@ -48,15 +48,16 @@ public class StudentService {
         priorityQueue.add(student);
     }
 
-    public void removeStudentById(int id) {
+    public boolean removeStudentById(int id) {
         Iterator<Student> iterator = priorityQueue.iterator();
         while (iterator.hasNext()) {
             Student student = iterator.next();
             if (student.getId() == id) {
                 iterator.remove();
-                break;
+                return true;
             }
         }
+        return false;
     }
 
     public void clean(){

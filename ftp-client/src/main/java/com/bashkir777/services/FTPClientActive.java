@@ -12,9 +12,7 @@ import java.nio.charset.StandardCharsets;
 
 public class FTPClientActive extends FTPClient {
 
-    public FTPClientActive(String user, String pass) {
-        super(user, pass);
-    }
+    public FTPClientActive() {}
 
     public ServerSocket openConnection() throws IOException {
 
@@ -51,7 +49,7 @@ public class FTPClientActive extends FTPClient {
 
             sendCommand("RETR " + remoteFileName);
             String answer = readResponse();
-            if(answer.equals("550 File not found")){
+            if(answer.equals("550 Failed to open file.")){
                 throw new IOException("No such file");
             }
 

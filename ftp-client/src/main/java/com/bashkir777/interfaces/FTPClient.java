@@ -11,15 +11,12 @@ public abstract class FTPClient {
     private BufferedWriter writer;
     private final String server =  System.getenv("FTP_SERVER");
     private final String self = System.getenv("FTP_ACTIVE_HOST");
-    private final String user;
-    private final String pass;
+    private final String user = System.getenv("FTP_USER");
+    private final String pass = System.getenv("FTP_PASS");
 
     private static final int PORT = 21;
 
-    public FTPClient(String user, String pass) {
-        this.user = user;
-        this.pass = pass;
-    }
+    public FTPClient() {}
 
     public final void sendCommand(String command) throws IOException {
         writer.write(command + "\r\n");
@@ -44,9 +41,7 @@ public abstract class FTPClient {
     }
 
     public final String readResponse() throws IOException {
-        String response = reader.readLine();
-        System.out.println(response);
-        return response;
+        return reader.readLine();
     }
 
     public final void close() throws IOException {

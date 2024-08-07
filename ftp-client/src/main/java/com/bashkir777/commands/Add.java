@@ -19,6 +19,7 @@ public class Add implements Command {
         assert args.length == 1 : "add command accepts only one parameter - student name";
         int id = studentService.getPriorityQueue().stream().mapToInt(Student::getId).max().orElse(0) + 1;
         studentService.addStudent(new Student(id, args[0]));
+        System.out.println("Student has been added. Don't forget to push changes.");
     }
 
 }

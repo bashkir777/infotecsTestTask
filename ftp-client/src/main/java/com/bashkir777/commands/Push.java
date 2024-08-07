@@ -18,5 +18,6 @@ public class Push implements Command {
         ftpClient.uploadFile(
                 studentService.queueToString(), System.getProperty("REMOTE_FILE_NAME")
         );
+        System.out.println("Changes has been pushed to ftp-server.");
     }
 }

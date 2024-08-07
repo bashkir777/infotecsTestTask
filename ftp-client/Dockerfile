@@ -10,6 +10,6 @@ RUN mvn clean package -DskipTests
 
 FROM openjdk:8-jdk-slim
 
-COPY --from=build /workspace/target/test_task_p1.jar test_task_p1.jar
+COPY --from=build /workspace/target/ftp-client.jar ftp-client.jar
 
-ENTRYPOINT ["java", "-jar", "test_task_p1.jar"]
+ENTRYPOINT ["java", "-jar", "ftp-client.jar"]
