@@ -16,6 +16,29 @@ public class FTPClientActive extends FTPClient {
         super(user, pass);
     }
 
+    public ServerSocket openConnection() throws IOException {
+
+        ServerSocket dataServerSocket = null;
+
+        connect();
+
+        sendCommand("TYPE I");
+        readResponse();
+
+        dataServerSocket = new ServerSocket(0);
+
+        int dataPort = dataServerSocket.getLocalPort();
+
+        String ip = getIPFromHostname(getSelf()).replace('.', ',');
+
+        String portCommand = "PORT " + ip + "," + (dataPort / 256) + "," + (dataPort % 256);
+
+        sendCommand(portCommand);
+        readResponse();
+
+        return dataServerSocket;
+    }
+
     @Override
     public String downloadFile(String remoteFileName) throws IOException {
         ByteArrayOutputStream baos = null;
@@ -23,21 +46,8 @@ public class FTPClientActive extends FTPClient {
         Socket dataSocket = null;
         InputStream dataIn = null;
         try {
-            connect();
 
-            sendCommand("TYPE I");
-            readResponse();
-
-            dataServerSocket = new ServerSocket(0);
-
-            int dataPort = dataServerSocket.getLocalPort();
-
-            String ip = getIPFromHostname(getSelf()).replace('.', ',');
-
-            String portCommand = "PORT " + ip + "," + (dataPort / 256) + "," + (dataPort % 256);
-
-            sendCommand(portCommand);
-            readResponse();
+            dataServerSocket = openConnection();
 
             sendCommand("RETR " + remoteFileName);
             readResponse();
@@ -78,21 +88,7 @@ public class FTPClientActive extends FTPClient {
         Socket dataSocket = null;
         OutputStream dataOut = null;
         try {
-            connect();
-
-            sendCommand("TYPE I");
-            readResponse();
-
-            dataServerSocket = new ServerSocket(0);
-
-            int dataPort = dataServerSocket.getLocalPort();
-
-            String ip = getIPFromHostname(getSelf()).replace('.', ',');
-
-            String portCommand = "PORT " + ip + "," + (dataPort / 256) + "," + (dataPort % 256);
-
-            sendCommand(portCommand);
-            readResponse();
+            dataServerSocket = openConnection();
 
             sendCommand("STOR " + remoteFileName);
             readResponse();
@@ -108,7 +104,7 @@ public class FTPClientActive extends FTPClient {
 
             readResponse();
 
-        }finally {
+        } finally {
             if (dataOut != null) {
                 dataOut.close();
             }
