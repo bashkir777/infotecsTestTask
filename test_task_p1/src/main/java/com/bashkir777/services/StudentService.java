@@ -71,4 +71,13 @@ public class StudentService {
         assert priorityQueue != null : "Queue can't be null";
         this.priorityQueue = priorityQueue;
     }
+
+    public Student getStudentById(int id) {
+        for (Student student : priorityQueue) {
+            if (student.getId() == id) {
+                return student;
+            }
+        }
+        return null;
+    }
 }

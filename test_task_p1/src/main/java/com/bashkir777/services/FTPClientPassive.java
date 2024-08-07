@@ -59,7 +59,10 @@ public class FTPClientPassive extends FTPClient {
         try {
             dataSocket = openConnection();
             sendCommand("RETR " + remoteFileName);
-            readResponse();
+            String answer = readResponse();
+            if(answer.equals("550 File not found")){
+                throw new IOException("No such file");
+            }
 
             baos = new ByteArrayOutputStream();
             dataIn = dataSocket.getInputStream();

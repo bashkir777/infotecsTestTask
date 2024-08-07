@@ -27,8 +27,8 @@ services:
       - ftp-server
     environment:
       - FTP_SERVER=ftp-server
+      - FTP_ACTIVE_HOST=ftp-client
       - FTP_USER=test_user
       - FTP_PASS=test_password
-      - FTP_ACTIVE_HOST=ftp-client
 volumes:
   ftp_data:

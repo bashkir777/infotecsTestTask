@@ -50,7 +50,10 @@ public class FTPClientActive extends FTPClient {
             dataServerSocket = openConnection();
 
             sendCommand("RETR " + remoteFileName);
-            readResponse();
+            String answer = readResponse();
+            if(answer.equals("550 File not found")){
+                throw new IOException("No such file");
+            }
 
             dataSocket = dataServerSocket.accept();
 

@@ -21,12 +21,16 @@ public abstract class FTPClient {
         this.pass = pass;
     }
 
-    public void sendCommand(String command) throws IOException {
+    public final void sendCommand(String command) throws IOException {
         writer.write(command + "\r\n");
         writer.flush();
     }
 
-    public void connect() throws IOException {
+    public abstract String downloadFile(String remoteFileName) throws IOException;
+
+    public abstract void uploadFile(String data, String remoteFileName) throws IOException;
+
+    public final void connect() throws IOException {
         socket = new Socket(server, PORT);
         reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
@@ -39,13 +43,13 @@ public abstract class FTPClient {
         readResponse();
     }
 
-    public String readResponse() throws IOException {
+    public final String readResponse() throws IOException {
         String response = reader.readLine();
         System.out.println(response);
         return response;
     }
 
-    public void close() throws IOException {
+    public final void close() throws IOException {
         sendCommand("QUIT");
         readResponse();
         socket.close();
@@ -56,34 +60,11 @@ public abstract class FTPClient {
         return inetAddress.getHostAddress();
     }
 
-    public Socket getSocket() {
-        return socket;
-    }
-
     public String getServer() {
         return server;
-    }
-
-    public BufferedReader getReader() {
-        return reader;
-    }
-
-    public BufferedWriter getWriter() {
-        return writer;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public String getPass() {
-        return pass;
     }
 
     public String getSelf() {
         return self;
     }
-
-    public abstract String downloadFile(String remoteFileName) throws IOException;
-    public abstract void uploadFile(String data, String remoteFileName) throws IOException;
 }

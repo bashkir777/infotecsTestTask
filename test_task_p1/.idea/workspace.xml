@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcfdc07c-360d-4d5a-a5a4-c528ef125dd6" name="Changes" comment="" />
+    <list default="true" id="dcfdc07c-360d-4d5a-a5a4-c528ef125dd6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +15,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Dockerfile" />
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -92,7 +96,8 @@
       <workItem from="1722856545015" duration="245000" />
       <workItem from="1722856815417" duration="7692000" />
       <workItem from="1722913295709" duration="3306000" />
-      <workItem from="1723001969575" duration="7044000" />
+      <workItem from="1723001969575" duration="15738000" />
+      <workItem from="1723022624804" duration="389000" />
     </task>
     <servers />
   </component>
