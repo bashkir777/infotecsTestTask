@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="IntegrationTestsSuite">
+    <test name="IntegrationTests">
+        <groups>
+            <run>
+                <include name="unit"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="unit.StudentServiceTest"/>
+        </classes>
+    </test>
+</suite>

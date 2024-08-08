@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="IntegrationTestsSuite">
+    <listeners>
+        <listener class-name="config.Listener"/>
+    </listeners>
+    <test name="IntegrationTests">
+        <groups>
+            <run>
+                <include name="integration"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="integration.FTPClientTest"/>
+        </classes>
+    </test>
+</suite>

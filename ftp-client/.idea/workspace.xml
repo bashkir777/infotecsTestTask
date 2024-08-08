@@ -35,24 +35,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.test_task_p1 [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.test_task_p1 [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.test_task_p1 [package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Maven.ftp-client [clean].executor": "Run",
+    "Maven.ftp-client [compile].executor": "Run",
+    "Maven.ftp-client [package].executor": "Run",
+    "Maven.ftp-client [test].executor": "Run",
+    "Maven.test_task_p1 [clean].executor": "Run",
+    "Maven.test_task_p1 [compile].executor": "Run",
+    "Maven.test_task_p1 [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.StudentServiceTest.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/suple/Desktop/base/ftp-client",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="TestNG.StudentServiceTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="MAIN_CLASS_NAME" value="com.bashkir777.Main" />
@@ -67,8 +76,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StudentServiceTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="ftp-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unit" />
+      <option name="MAIN_CLASS_NAME" value="unit.StudentServiceTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.StudentServiceTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -96,6 +123,9 @@
       <workItem from="1722913295709" duration="3306000" />
       <workItem from="1723001969575" duration="15738000" />
       <workItem from="1723022624804" duration="6167000" />
+      <workItem from="1723029176488" duration="512000" />
+      <workItem from="1723086948776" duration="6524000" />
+      <workItem from="1723102896433" duration="10945000" />
     </task>
     <servers />
   </component>
