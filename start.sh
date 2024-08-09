@@ -26,6 +26,8 @@ echo "Type 'start' and press Enter to initiate the session."
 
 docker attach ftp-client
 
+clear
+
 docker-compose down
 
 clear 

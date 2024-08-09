@@ -23,6 +23,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -38,6 +42,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Docker.Dockerfile.executor": "Run",
+    "Maven.ftp-client [-N,io.takari:maven:wrapper].executor": "Run",
     "Maven.ftp-client [clean].executor": "Run",
     "Maven.ftp-client [compile].executor": "Run",
     "Maven.ftp-client [package].executor": "Run",
@@ -61,7 +67,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.StudentServiceTest">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn -N io.takari:maven:wrapper" />
+      <command value="./mvnw -N io.takari:maven:wrapper -Dmaven=3.8.4" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="MAIN_CLASS_NAME" value="com.bashkir777.Main" />
@@ -93,8 +105,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="TestNG.StudentServiceTest" />
         <item itemvalue="Application.Main" />
       </list>
@@ -125,7 +150,8 @@
       <workItem from="1723022624804" duration="6167000" />
       <workItem from="1723029176488" duration="512000" />
       <workItem from="1723086948776" duration="6524000" />
-      <workItem from="1723102896433" duration="10945000" />
+      <workItem from="1723102896433" duration="11776000" />
+      <workItem from="1723176905745" duration="1852000" />
     </task>
     <servers />
   </component>

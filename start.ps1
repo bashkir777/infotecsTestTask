@@ -23,6 +23,8 @@ Write-Output "Type 'start' and press Enter to initiate the session."
 
 docker attach ftp-client
 
+Clear-Host
+
 docker-compose down
 
 Clear-Host
